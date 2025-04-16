@@ -24,7 +24,7 @@ class Product(models.Model):
             unique_slug = self.slug
             counter = 1
             
-            while Product.objects.filter(slug=uniques_slug).exists():
+            while Product.objects.filter(slug=unique_slug).exists():
                 unique_slug = f'{self.slug}-{counter}'
                 counter += 1
             self.slug = unique_slug
